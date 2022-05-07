@@ -16,5 +16,17 @@ function modelLoaded(){
 function gotPoses(results){
     if(results.length > 0){
           console.log(results);
+          leftWristX = results[0].pose.leftWrist.x;
+          rightWristX = results[0].pose.rightWrist.x;
+          difference = floor(leftWristX-rightWristX);
+          
     }
+}
+
+function draw(){
+    background('#f5f0f0');
+
+    textSize(difference);
+    fill('#140103');
+    text('Sanvi', 50, 400);
 }
